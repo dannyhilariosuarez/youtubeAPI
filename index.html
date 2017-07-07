@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html> 
+<head >
+    <link rel="stylesheet" type="text/css" href="css/Video.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body> 
+    <main id="main" class="container">
+        <div id="div_default" class="section">
+            <h2 id="span"></h2>
+            <div id="div-menu">
+                   <div id="div_titleVideos">
+        <h1 id="h2_videos">Youtube API</h1>
+    </div>
+    <div id="div_videos">
+        <ul id="ul_videos"></ul>
+    </div>
+                  
+                        
+                </div>
+            </div>  
+    </main>
+
+    <script> 
+        var key = 'AIzaSyA2oBLjdQ5hcJ7PAjRiPtUuA17JtwGB_DI';
+        var id = 'UCPdjC-WnTBeMBEU9egQq1Cg';
+        var maxResults = 10;
+        var videoWidth = "230";
+        var videoHeight = "130";
+
+        $(document).ready(function () {
+            $.get(
+                'https://www.googleapis.com/youtube/v3/channels', {
+                    part: 'contentDetails',
+                    key: key,
+                    id: id
+                },
+                    function (data) {
+                        $.each(data.items, function (i, item) {
+                            console.log(item);
+                            pid = item.contentDetails.relatedPlaylists.uploads;
+                            getVideos(pid);
+
+                        });
+                    }
+            );
+        });
+
+        function getVideos(pid) {
+            $.get(
+                'https://www.googleapis.com/youtube/v3/playlistItems', {
+                    part: 'snippet',
+                    maxResults: maxResults,
+                    playlistId: pid,
+                    key: key,
+                },
+                    function (data) {
+                        var output;
+                        $.each(data.items, function (i, item) {
+                            console.log(item);
+                            videoTitle = item.snippet.title;
+                            videoId = item.snippet.resourceId.videoId;
+                            channelTitle = item.snippet.channelTitle;
+                            date = new Date(item.snippet.publishedAt);
+                            publishDate = (date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear());
+                             
+                            output = '<li class="li_videos">' +
+                                        '<div><iframe id="iframe_video" height="' + videoHeight + ' " width="' + videoWidth + '" src=\"http://www.youtube.com/embed/' + videoId + '\"></iframe></div>' +
+                                            '<div id="div_title" title="' + videoTitle + '"><h3 class="videoTitle">' + videoTitle + '</h3></div>' +
+                                            '<div id="div_channelTitle"><h3 class="channelTitle">' + channelTitle + '</div></div>' +
+                                            '<div id="div_date"><h3 class="videoDate">' + publishDate + '</div></div>'
+                                     '</li>';
+
+                            //Append to results listStyleType
+                            $('#ul_videos').append(output);
+                        });
+                    }
+            );
+        }
+    </script>
+</body> 
+</html>
