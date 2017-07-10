@@ -1,4 +1,4 @@
-﻿ 
+ 
 .videoTitle {
     display: block;
     overflow: hidden;
@@ -29,9 +29,10 @@
     padding: 15px;
     text-align: center;
 }
- 
+
 #h2_videos{
-    padding: 15px;
+    padding: 0 20px;
+	color: #F44336;
 }
 
 .channelTitle{
@@ -49,18 +50,24 @@
     color: grey;
 }
 
+#div_footer{
+	    text-align: center;
+}
+
+.link{
+	color: white;
+	font-weight: 600;
+}
  
 #main {
     background-color: white;
     position: relative;
     min-height: 15%;
-    margin-top: 100px;
-    /*background-image: url('../images/background.jpg');*/
-     background-image: url('../images/background.jpg');
+    margin-top: 100px; 
 }
 
 body{
-    background-image: url('../images/background2.jpg');
+    background-image: url('../images/background2.jpg'); 
     background-repeat:no-repeat;
     background-size:cover;
 } 
