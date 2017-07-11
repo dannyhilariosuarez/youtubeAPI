@@ -1,4 +1,4 @@
 # youtubeAPI
 
 
-![alt text](https://github.com/dannyhilariosuarez/youtubeAPI/blob/master/Index.PNG)
+![alt text](https://github.com/dannyhilariosuarez/youtubeAPI/blob/master/index.PNG)
