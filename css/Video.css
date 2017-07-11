@@ -64,6 +64,7 @@
     position: relative;
     min-height: 15%;
     margin-top: 100px; 
+	border-radius: 2px;	
 }
 
 body{
