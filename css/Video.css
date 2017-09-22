@@ -73,11 +73,11 @@ a{
 
 body{
     margin: 0px;
-    border-top: 5px solid #ffff;
+    border-top: 5px solid #fff;
     background-image: url('../images/background2.jpg'); 
     background-repeat:no-repeat;
     background-size:cover;
-    color: #ffff;
+    color: #fff;
 } 
 
 #ol_menu {
@@ -162,8 +162,7 @@ svg:not(:root) {
     width: 80%;
 }
 
-body {
-    margin: 0px;
+body { 
     background-color: #dfdfdf;
     color: #025C89;
     background-repeat: repeat-x;
@@ -191,10 +190,10 @@ ul li {
   font-size: 0.9rem;  }
 
 .love {
-  color: #ffff; }
+  color: #fff; }
 
 .linkDa{
-     color: #ffff;
+     color: #fff;
 }
 
 .github-corner {
