@@ -11,6 +11,10 @@
     margin: 5px 0 20px;
 }
 
+a{
+  text-decoration: none;
+}
+
 .li_videos {
     vertical-align: top;
     width: 196px;
@@ -73,6 +77,7 @@ body{
     background-image: url('../images/background2.jpg'); 
     background-repeat:no-repeat;
     background-size:cover;
+    color: #ffff;
 } 
 
 #ol_menu {
@@ -186,10 +191,10 @@ ul li {
   font-size: 0.9rem;  }
 
 .love {
-  color: red; }
+  color: #ffff; }
 
 .linkDa{
-     color: #9C27B0;
+     color: #ffff;
 }
 
 .github-corner {
